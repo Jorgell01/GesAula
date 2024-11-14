@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" />
+    <ColumnConstraints hgrow="ALWAYS" prefWidth="488.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints prefHeight="80.0" vgrow="NEVER" />
+    <RowConstraints prefHeight="80.0" vgrow="NEVER" />
+    <RowConstraints prefHeight="80.0" vgrow="NEVER" />
+      <RowConstraints prefHeight="80.0" vgrow="NEVER" />
+      <RowConstraints prefHeight="80.0" vgrow="NEVER" />
+  </rowConstraints>
+   <children>
+      <Label text="Nombre:" />
+      <Label text="Apellidos:" GridPane.rowIndex="1" />
+      <Label text="Fecha de nacimiento:" GridPane.rowIndex="2" />
+      <Label text="Sexo:" GridPane.rowIndex="3" />
+      <Label text="Repite:" GridPane.rowIndex="4" />
+      <TextField fx:id="nameTextField" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="surnameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <DatePicker fx:id="birthDate" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <ComboBox fx:id="sexComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <CheckBox fx:id="repeatCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </CheckBox>
+   </children>
+</GridPane>

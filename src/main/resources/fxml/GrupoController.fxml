@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" hgap="10" prefHeight="400.0" prefWidth="600.0" vgap="10" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+
+    <columnConstraints>
+        <!-- Primera columna para las etiquetas -->
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+
+        <!-- Segunda columna para los campos de entrada y sliders -->
+        <ColumnConstraints hgrow="ALWAYS" />
+
+        <!-- Tercera columna para las etiquetas de porcentaje -->
+        <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="30" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <!-- Configuración de altura de cada fila -->
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+    <children>
+        <Label text="Denominación:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Label>
+        <TextField fx:id="denominacionTextField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+
+        <Label text="Inicio del curso:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Label>
+        <DatePicker fx:id="iniciocursoDate" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+
+        <Label text="Fin del curso:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Label>
+        <DatePicker fx:id="fincursoDate" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+
+        <Label text="Exámenes:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Label>
+        <Slider fx:id="examenesSlider" majorTickUnit="10.0" minorTickCount="9" showTickMarks="true" snapToTicks="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+        <Label fx:id="examenesLabel" text="0%" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+        <Label text="Prácticas:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Label>
+        <Slider fx:id="practicasSlider" majorTickUnit="10.0" minorTickCount="9" showTickMarks="true" snapToTicks="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
+        <Label fx:id="practicasLabel" text="0%" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+        <Label text="Actitud:" GridPane.columnIndex="0" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></Label>
+        <Slider fx:id="actitudSlider" majorTickUnit="10.0" minorTickCount="9" showTickMarks="true" snapToTicks="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" />
+        <Label fx:id="actitudLabel" text="0%" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+    </children>
+</GridPane>
