@@ -1,8 +1,7 @@
 package dad.gesaula.controllers;
 
+import dad.gesaula.ui.model.Grupo;
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,11 +47,10 @@ public class GrupoController implements Initializable {
     @FXML
     private GridPane root;
 
-    private DoubleProperty actitudProperty = new SimpleDoubleProperty();
-    private DoubleProperty examenesProperty = new SimpleDoubleProperty();
-    private DoubleProperty practicasProperty = new SimpleDoubleProperty();
+    private Grupo grupo;
 
-    public GrupoController() {
+    public GrupoController(Grupo grupo) {
+        this.grupo = grupo;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/GrupoController.fxml"));
             loader.setController(this);
@@ -64,11 +62,27 @@ public class GrupoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Bindings para actualizar los Labels de porcentaje automáticamente
+        // Vincular sliders con etiquetas de porcentaje
         actitudLabel.textProperty().bind(Bindings.format("%.0f%%", actitudSlider.valueProperty()));
         examenesLabel.textProperty().bind(Bindings.format("%.0f%%", examenesSlider.valueProperty()));
         practicasLabel.textProperty().bind(Bindings.format("%.0f%%", practicasSlider.valueProperty()));
 
+        // Sincronizar sliders con el modelo
+        actitudSlider.valueProperty().addListener((obs, oldVal, newVal) ->
+                grupo.getPesos().setActitud(newVal.doubleValue()));
+        examenesSlider.valueProperty().addListener((obs, oldVal, newVal) ->
+                grupo.getPesos().setExamenes(newVal.doubleValue()));
+        practicasSlider.valueProperty().addListener((obs, oldVal, newVal) ->
+                grupo.getPesos().setPracticas(newVal.doubleValue()));
+
+        // Manejar fechas
+        iniciocursoDate.valueProperty().addListener((obs, oldDate, newDate) ->
+                grupo.setIniCurso(newDate));
+        fincursoDate.valueProperty().addListener((obs, oldDate, newDate) ->
+                grupo.setFinCurso(newDate));
+
+        // Vincular el campo de texto de denominación con la propiedad denominacion de grupo
+        denominacionTextField.textProperty().bindBidirectional(grupo.denominacionProperty());
     }
 
     public GridPane getRoot() {

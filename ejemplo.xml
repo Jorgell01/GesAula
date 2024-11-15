@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<grupo denominacion="ejemplo">
+    <alumnos>
+        <apellidos>Sin apellidos</apellidos>
+        <fechaNacimiento>2024-11-15</fechaNacimiento>
+        <nombre>Sin nombre</nombre>
+        <repite>false</repite>
+        <sexo>HOMBRE</sexo>
+    </alumnos>
+    <finCurso>2025-06-20</finCurso>
+    <iniCurso>2024-11-15</iniCurso>
+    <pesos actitud="78.0" examenes="61.0" practicas="29.0"/>
+</grupo>
